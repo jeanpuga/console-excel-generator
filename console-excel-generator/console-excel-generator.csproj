@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5567E18B-A8D9-44BB-84BD-56B9DF98C863}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>console_excel_generator</RootNamespace>
+    <AssemblyName>console-excel-generator</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EPPlus, Version=4.1.1.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.4.1.1\lib\net40\EPPlus.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Excel\Cell\CellDate.cs" />
+    <Compile Include="Excel\Cell\CellDateHour.cs" />
+    <Compile Include="Excel\Cell\CellHour.cs" />
+    <Compile Include="Excel\Cell\CellMoney.cs" />
+    <Compile Include="Excel\Cell\CellNumber.cs" />
+    <Compile Include="Excel\Cell\CellPercentage.cs" />
+    <Compile Include="Excel\Cell\CellText.cs" />
+    <Compile Include="Excel\Contracts\IStyleFactory.cs" />
+    <Compile Include="Excel\Contracts\ICell.cs" />
+    <Compile Include="Excel\Contracts\IStyle.cs" />
+    <Compile Include="Excel\Contracts\ICellFactory.cs" />
+    <Compile Include="Excel\ExcelGenerator.cs" />
+    <Compile Include="Excel\Factory\CellFactory.cs" />
+    <Compile Include="Excel\Factory\StyleFactory.cs" />
+    <Compile Include="Excel\Styles\StyleBackgroundColor.cs" />
+    <Compile Include="Excel\Styles\StyleBorderBottom.cs" />
+    <Compile Include="Excel\Styles\StyleBorderLeft.cs" />
+    <Compile Include="Excel\Styles\StyleBorderRight.cs" />
+    <Compile Include="Excel\Styles\StyleBorderTop.cs" />
+    <Compile Include="Excel\Styles\StyleFontBold.cs" />
+    <Compile Include="Excel\Styles\StyleFontColor.cs" />
+    <Compile Include="Excel\Styles\StyleFontSize.cs" />
+    <Compile Include="Excel\Styles\StyleHorizontalAlignment.cs" />
+    <Compile Include="Excel\Styles\StyleIndent.cs" />
+    <Compile Include="Excel\Styles\StyleMerge.cs" />
+    <Compile Include="Excel\Styles\StylePatternType.cs" />
+    <Compile Include="Model\Pai.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
